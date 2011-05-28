@@ -19,13 +19,14 @@
 
 -define(SERVER, ?MODULE).
 
--define(DEFAULT_TTL, 5000).
+-define(DEFAULT_TTL, 15000).
 
 -record(state, {cache=dict:new()}).
 
 start_link() ->
-    gen_server:start_link({local, ?SERVER}, ?MODULE, [], []).
-    %% gen_server:start_link(?MODULE, [], []).
+    io:format("HCache starting~n", []),
+    %% gen_server:start_link({local, ?SERVER}, ?MODULE, [], []).
+    gen_server:start_link(?MODULE, [], []).
 
 get(Cache, Key) ->
     gen_server:call(Cache, {get, Key}).
