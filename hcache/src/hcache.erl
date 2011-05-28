@@ -25,8 +25,8 @@
 
 start_link() ->
     io:format("HCache starting~n", []),
-    %% gen_server:start_link({local, ?SERVER}, ?MODULE, [], []).
-    gen_server:start_link(?MODULE, [], []).
+    gen_server:start_link({local, ?SERVER}, ?MODULE, [], []).
+    %% gen_server:start_link(?MODULE, [], []).
 
 get(Cache, Key) ->
     gen_server:call(Cache, {get, Key}).

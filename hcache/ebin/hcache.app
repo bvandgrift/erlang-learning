@@ -5,4 +5,5 @@
               {applications,[kernel,stdlib]},
               {mod,{hcache_app,[]}},
               {env,[]},
-              {modules,[hcache,hcache_app,hcache_sup]}]}.
+              {modules,[conn_handler_sup,gen_nb_server,hcache,hcache_app,
+                        hcache_net_listener,hcache_sup]}]}.
